@@ -16,6 +16,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
 }
 
 h1,
@@ -36,10 +37,7 @@ ul,
 ol {
   list-style: none;
 }
-.page {
-  display: flex;
-  width: 1200px;
-}
+
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -48,11 +46,16 @@ ol {
   width: 1140px;
   gap:30px;
   align-content: center;
+  margin-left: 30px;
+
+  
 }
 .result {
-  margin-top: 79px;
-  margin-left: 30px;
-  height: 490px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 490px;
 }
 .search-form {
   display:flex;
@@ -66,15 +69,18 @@ ol {
 .content__details {
   width:100%;
   height: 100%;
+
 } 
 .result__video-container {
   width: 711px;
   height:386px;
   margin-bottom: 11px;
+  
 }
 .result__video {
   width:100%;
   height: 100%;
+  object-fit: cover;
 }
 .content__list-item:not(:last-of-type) {
   margin-bottom:26px;
@@ -88,25 +94,28 @@ a .content__video-card {
 .content__video-card-thumbnail {
   width:194px;
   height:103px;
+  object-fit: cover;
 }
 .content__video-card-description-container {
   display: grid;
   grid:auto-fit;
 }
+
 .result__video-container {
   position: relative;
+
 }
 .content__list {
   position: relative;
 }
 .search-form__fieldset-title {
-    font-family: Fira Sans Condensed;
+    font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21.6px;
 }
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size:75px;
   line-height: 70.5px;
@@ -120,22 +129,28 @@ a .content__video-card {
   display: block;
   text-decoration: none;
   color:#ffffff;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size:18px;
   line-height: 16.2px;
   margin: 5px;
+  
 }
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
   margin-top: 5px;
+  text-overflow: ellipsis;
+   white-space: nowrap;
+    overflow: hidden;
+    max-width: 394px;
 }
 .content__video-card-description {
   line-height: 16.2px;
+  max-width: 394px;
 }
 .visually-hidden {
   position: absolute;
@@ -154,6 +169,7 @@ a .content__video-card {
 }
 .search-form__label {
   display: flex;
+  align-items: center;
   width: fit-content;
   cursor: pointer;
   appearance: none;
@@ -162,11 +178,11 @@ a .content__video-card {
   background-color: inherit; 
   width: 225px;
   height: 27px;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size:18px;
   line-height: 21.6px;
-  color:rgb(255 255 255/0.7 );
+  color:rgb(255 255 255 );
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #fff;
   border-right: 0;
@@ -176,7 +192,8 @@ a .content__video-card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px; 
+  gap: 5px;
+  
 }
 .search-form__pseudo-checkbox{
   display: flex;
@@ -190,40 +207,43 @@ a .content__video-card {
 }
 button {
   background-color: inherit;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 21.6px;
   text-align: center;
   color: #fff;
+  border: 1px solid #fff;
   align-self: end;
   cursor: pointer;
 }
 .search-form__submit-button {
   width: 194px;
   height: 34px;
-  border: 1px solid #fff;
+  
   gap: 10px;
+
 }
 .more-button {
   width: 399px;
   height: 34px;
-  border: 1px solid #fff;
-}
+ }
 .search-form__fieldset:not(:last-of-type) {
   margin-right: 4px;
 }
 .search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
 }
 input[type='checkbox']:checked + span::before {
   content: "";
   width: 15px;
   height: 15px;
   background-color: #fff;
-}.search-form__label:hover {
+}
+.search-form__label-text:hover {
   text-decoration: underline;
 }
+
 .button:hover {
   text-decoration: underline;
 }
@@ -236,15 +256,15 @@ button:focus {
 button:focus-visible {
   border: 1px solid #fff;
 }
-.content__card-link_current:active {
+.content__card-link:active {
   background-color: #545050;
 }
-.content__card-link_current:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
-.content__card-link_current:focus {
+.content__card-link:focus {
   border: none;
 }
-.content__card-link_current:focus-visible {
+.content__card-link:focus-visible {
   border: 1px solid #fff;
 }
